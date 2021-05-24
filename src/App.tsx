@@ -1,13 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const [status, setStatus] = useState<string | number>("text");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h4>{status}</h4>
+        <button onClick={() => setStatus("new text")}>Button</button>
+        <button onClick={() => setStatus("text")}>Reset Button</button>
+        <button onClick={() => setStatus(1)}>Set Number Button</button>
         <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
