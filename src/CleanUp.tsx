@@ -10,7 +10,11 @@ const CleanUp: React.FC = () => {
     useEffect(() => {
         console.log("useEffect in CleanUp invoked!")
         // ユーザがマウスクリックをした際のイベント
-        window.addEventListener("mousedown", incrementNum)
+        window.addEventListener("mousedown", incrementNum);
+        return ()=>{
+            console.log("Cleanup invoked !");
+            window.removeEventListener("mousedown", incrementNum);
+        };
     }, [])
     return <div>{currentNum}</div>
 }
