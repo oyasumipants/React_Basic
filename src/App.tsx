@@ -6,6 +6,7 @@ const App: React.FC = () => {
   const [status, setStatus] = useState<string | number>("text");
   const [input, setInput] = useState("");
   const [counter, setCounter] = useState(0);
+  const [display, setDisplay] = useState(true);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e)
